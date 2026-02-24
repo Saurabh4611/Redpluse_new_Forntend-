@@ -4,7 +4,7 @@ import PartnersOne from "@/components/sections/partners/partnersOne"
 import ProjectsTwo from "@/components/sections/projects/projectsTwo"
 import Offer from "@/components/sections/offer"
 import PageTitle from "@/components/sections/pageTitle"
-import TeamesThree from "@/components/sections/teames/teamesThree"
+
 
 const About = () => {
   return (
@@ -14,7 +14,7 @@ const About = () => {
       <Offer/>
       <ProjectsTwo/>
       <MarqueTwo className="section-padding"/>
-      <TeamesThree/>
+     
       <PartnersOne/>
     </>
   )

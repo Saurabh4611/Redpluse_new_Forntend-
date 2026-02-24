@@ -15,21 +15,10 @@ const PriceGridOne = () => {
                 <div className="pricing-wrapper">
                     <div className="section-title-area">
                         <SectionTitle>
-                            <SectionTitle.SubTitle>Our Pricing</SectionTitle.SubTitle>
-                            <SectionTitle.Title>Choose Your Best Offer</SectionTitle.Title>
+                            <SectionTitle.SubTitle>Our Collabartion</SectionTitle.SubTitle>
+                            <SectionTitle.Title>Meet Our Elite Members</SectionTitle.Title>
                         </SectionTitle>
-                        <ul className="nav" role="tablist">
-                            <li className="nav-item wow slideUp" data-delay=".3" role="presentation">
-                                <a href="#monthly" data-bs-toggle="tab" className="nav-link active" aria-selected="true" role="tab">
-                                    Monthly
-                                </a>
-                            </li>
-                            <li className="nav-item wow slideUp" data-delay=".5" role="presentation">
-                                <a href="#yearly" data-bs-toggle="tab" className="nav-link" aria-selected="false" role="tab" tabIndex={-1}>
-                                    Yearly
-                                </a>
-                            </li>
-                        </ul>
+                       
                     </div>
                     <div className="tab-content">
                         <div id="monthly" className="tab-pane fade show active" role="tabpanel">

@@ -14,10 +14,10 @@ export interface TeamMemberDataType {
 export const teamMembersOneData: TeamMemberDataType[] = [
     {
         id: 1,
-        role: "Scrum Master",
-        name: "Cameron Williamson",
-        description: "Integer at sapien nec sapien sollicitudin ultrices in ut nisl.",
-        image: "/img/team/hover-1.png",
+        role: "Manager",
+        name: "Mr.Pratik Chavare",
+        description: "The Project Manager at REDPLUSE is responsible for leading the development, implementation, and continuous improvement of the platform.",
+        image: "/img/team/pratik.png",
         socialLinks: [
             {
                 icon: 'fab fa-facebook-f',
@@ -36,10 +36,10 @@ export const teamMembersOneData: TeamMemberDataType[] = [
     },
     {
         id: 2,
-        role: "Engineering",
-        name: "Leslie Alexander",
-        description: "Integer at sapien nec sapien sollicitudin ultrices in ut nisl.",
-        image: "/img/team/hover-1.png",
+        role: "Web Developer",
+        name: "Mr.Sanjay Jadhav",
+        description: "The Web Developer at REDPLUSE is responsible for designing and building the platform's user interface.",
+        image: "/img/team/sanjay.png",
         socialLinks: [
             {
                 icon: 'fab fa-facebook-f',
@@ -58,10 +58,10 @@ export const teamMembersOneData: TeamMemberDataType[] = [
     },
     {
         id: 3,
-        role: "UI/UX Designer",
-        name: "Ronald Richards",
-        description: "Integer at sapien nec sapien sollicitudin ultrices in ut nisl.",
-        image: "/img/team/hover-1.png",
+        role: "Client Support",
+        name: "Ms.Radhika Barade",
+        description: "The Client Support team at REDPLUSE is responsible for providing support and assistance to clients.",
+        image: "/img/team/radhika.png",
         socialLinks: [
             {
                 icon: 'fab fa-facebook-f',
@@ -80,10 +80,10 @@ export const teamMembersOneData: TeamMemberDataType[] = [
     },
     {
         id: 4,
-        role: "Web Designer",
-        name: "Darrell Steward",
-        description: "Integer at sapien nec sapien sollicitudin ultrices in ut nisl.",
-        image: "/img/team/hover-1.png",
+        role: "Finance Manager",
+        name: "Mr.Vishal Nikam",
+        description: "The Finance Manager at REDPLUSE is responsible for managing the platform's financial operations.",
+        image: "/img/team/vishal.png",
         socialLinks: [
             {
                 icon: 'fab fa-facebook-f',

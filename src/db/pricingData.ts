@@ -12,7 +12,7 @@ export type PriceDataType ={
 export const pricingData:PriceDataType[] = [
     {
         id: 'Diamond',
-        plan: 'Diamond',
+        plan: 'Blood Bank',
        
         frequency: 'Rajput Blood  Bank',
         description: 'Blood Bank is a facility that collects, tests, processes, and distributes blood and blood products to hospitals and clinics for transfusions and medical procedures.',
@@ -29,8 +29,8 @@ export const pricingData:PriceDataType[] = [
         isActive: false
     },
     {
-        id: 'monthly-popular',
-        plan: 'Gold',
+        id: 'Hospital',
+        plan: 'Hospital',
        
         frequency: 'A1 Hospital',
         description: 'A1 Hospital is a healthcare facility that provides medical services, including diagnostics, treatment, and patient care, to individuals in need of healthcare support.',
@@ -47,8 +47,8 @@ export const pricingData:PriceDataType[] = [
         isActive: true
     },
     {
-        id: 'monthly-premium',
-        plan: 'Sliver',
+        id: 'Insurance',
+        plan: 'Insurance',
         
         frequency: 'Personal Health Care',
         description: 'Personal Health Care is an Insurance company that provides health insurance plans and services to individuals, offering coverage for medical expenses and healthcare needs.',

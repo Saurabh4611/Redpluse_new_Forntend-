@@ -8,17 +8,16 @@ import BlogStandard from "@/pages/blog-standard";
 import Contact from "@/pages/contact";
 import Faq from "@/pages/faq";
 import Home from "@/pages/home";
+import Login from "@/pages/login";
 
 import Pricing from "@/pages/pricing";
 import Project from "@/pages/project";
-import ProjectCarousel from "@/pages/project-carousel";
-import ProjectDetails from "@/pages/project-details";
+
 import Service from "@/pages/service";
 import ServiceCarousel from "@/pages/service-carousel";
 import ServiceDetails from "@/pages/service-details";
 import Team from "@/pages/team";
-import TeamCarousel from "@/pages/team-carousel";
-import TeamDetails from "@/pages/team-details";
+
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -85,6 +84,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contact',
                 element:<Contact/>
+            },
+             {
+                path:'/login',
+                element:<Login/>
             },
         ]
     },

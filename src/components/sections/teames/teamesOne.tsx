@@ -36,7 +36,7 @@ const TeamesOne = () => {
                             EXPERT PEOPLE
                         </SectionTitle.SubTitle>
                         <SectionTitle.Title className='text-white'>
-                            Dedicated Team Members
+                            Dedicated  Redpluse Team Members
                         </SectionTitle.Title>
                     </SectionTitle>
                     <Link to="/team" className="theme-btn hover-white wow slideUp" data-delay=".5">
