@@ -1,0 +1,115 @@
+.login-section {
+    padding: 100px 0;
+    background-color: $bg-color;
+
+    .login-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        background: $white;
+        padding: 50px 40px;
+        box-shadow: $shadow;
+        border: 1px solid $border-color;
+
+        .login-title {
+            text-align: center;
+            margin-bottom: 35px;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 700;
+                position: relative;
+                padding-bottom: 15px;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 3px;
+                    background-color: $theme-color;
+                }
+            }
+        }
+
+        .form-clt {
+            margin-bottom: 20px;
+
+            label {
+                font-weight: 600;
+                margin-bottom: 8px;
+                display: block;
+                color: $header-color;
+            }
+
+            input {
+                width: 100%;
+                padding: 15px 20px;
+                border: 1px solid $border-color;
+                outline: none;
+                font-weight: 500;
+                @include transition;
+
+                &:focus {
+                    border-color: $theme-color;
+                }
+
+                &::placeholder {
+                    color: $text-color;
+                }
+            }
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 20px;
+
+            a {
+                font-size: 14px;
+                color: $theme-color;
+                font-weight: 500;
+
+                &:hover {
+                    color: $header-color;
+                }
+            }
+        }
+
+        .theme-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: $theme-color;
+            color: $white;
+            border: none;
+            font-weight: 600;
+            text-align: center;
+            @include transition;
+
+            &:hover {
+                background-color: $header-color;
+            }
+        }
+
+        .register-text {
+            margin-top: 25px;
+            text-align: center;
+
+            a {
+                color: $theme-color;
+                font-weight: 600;
+
+                &:hover {
+                    color: $header-color;
+                }
+            }
+        }
+
+        .error-message {
+            margin-top: 15px;
+            color: red;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+}

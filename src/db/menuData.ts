@@ -78,7 +78,8 @@ export const menuData: MenuItemDataType[] = [
 
   {
     title: 'Login',
-    link: '/',
+    link: '/login',
     
   },
+   
 ];

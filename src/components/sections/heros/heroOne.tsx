@@ -1,7 +1,10 @@
 import { motion } from "motion/react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 import { Link } from "react-router-dom";
 
 interface SlideType {
@@ -29,6 +32,14 @@ const slidesData: SlideType[] = [
     description: 'At Redpluse, we bridge the gap between those in urgent need of blood and compassionate donors, making every donation simple, secure, and life-changing.',
     link: '/',
   },
+  {
+    id: 3,
+    image: '/img/hero/family.png',
+    title: 'WELCOME TO REDPLUSE',
+   heading: 'Connecting Heroes <br /> with Those <br /> Who Need Them',
+    description: 'At Redpluse, we bridge the gap between those in urgent need of blood and compassionate donors, making every donation simple, secure, and life-changing.',
+    link: '/',
+  },
 ];
 
 const HeroOne = () => {
@@ -42,15 +53,15 @@ const HeroOne = () => {
         loop={true}
         slidesPerView={1}
         effect="fade"
-        speed={3000}
-        autoplay={{
-          delay: 7000,
-          disableOnInteraction: false,
-        }}
-        navigation={{
-          nextEl: ".array-prev",
-          prevEl: ".array-next",
-        }}
+        speed={1000}
+autoplay={{
+  delay: 4000,
+  disableOnInteraction: false,
+}}
+       navigation={{
+  nextEl: ".array-next",
+  prevEl: ".array-prev",
+}}
         modules={[Navigation, EffectFade, Autoplay]}
       >
         {slidesData.map((slide) => (
@@ -118,10 +129,16 @@ const Card = ({ slide, isActive }: { slide: SlideType; isActive: boolean }) => {
                 }}
                 className="hero-button"
               >
-                <Link to={slide.link} className="theme-btn theme-color-2">
+                
+              </motion.div>
+              <Link to="/about" className="theme-btn theme-color-2">
                   <span>Learn More <i className="fas fa-chevron-right" /></span>
                 </Link>
-              </motion.div>
+                <br />
+                  <br />
+                <Link to="/register" className="theme-btn theme-color-2">
+                  <span>Join Us <i className="fas fa-chevron-right" /></span>
+                </Link>
             </div>
           </div>
         </div>
