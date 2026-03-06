@@ -13,6 +13,7 @@
     "axios": "^1.13.5",
     "bootstrap": "^5.3.8",
     "motion": "^12.4.2",
+    "node": "^25.7.0",
     "react": "^18.2.0",
     "react-animate-height": "^3.2.3",
     "react-countup": "^6.5.3",

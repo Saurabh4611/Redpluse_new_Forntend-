@@ -136,7 +136,7 @@ const Card = ({ slide, isActive }: { slide: SlideType; isActive: boolean }) => {
                 </Link>
                 <br />
                   <br />
-                <Link to="/register" className="theme-btn theme-color-2">
+                <Link to="/register-user" className="theme-btn theme-color-2">
                   <span>Join Us <i className="fas fa-chevron-right" /></span>
                 </Link>
             </div>

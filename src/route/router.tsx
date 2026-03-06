@@ -19,7 +19,7 @@ import ServiceCarousel from "@/pages/service-carousel";
 import ServiceDetails from "@/pages/service-details";
 import Team from "@/pages/team";
 
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Route } from "react-router-dom";
 import HelperList from "@/pages/Helpers/helperslist";
 import AdminDashboard from "@/pages/admin/admindashboard";
 import PatientList from "@/pages/Patients/patientlist";
@@ -28,6 +28,9 @@ import Signupuser from "@/pages/resigter-user";
 import CreateBloodRequest from "@/pages/Patients/createbloodreq";
 import PatientDashboard from "@/pages/Patients/patientdashboard";
 import ViewCreatedRequests from "@/pages/Patients/viewrequests";
+import HelperDashboard from "@/pages/Helpers/helperdashboard";
+import AvailableRequests from "@/pages/Helpers/avaliblerequest";
+import MyDonations from "@/pages/Helpers/mydonation";
 
 
 export const router = createBrowserRouter([
@@ -139,6 +142,20 @@ export const router = createBrowserRouter([
                 path:'/requests',
                 element:<ViewCreatedRequests/>
             },
+            {
+             path :"/helperDashboard",
+             element:<HelperDashboard/>
+
+            },
+            {
+             path:"/available-requests" ,
+             element:<AvailableRequests/> 
+            },
+             {  
+               path:"/my-donations",
+                element:<MyDonations />
+             },
+            
             
         ]
     },

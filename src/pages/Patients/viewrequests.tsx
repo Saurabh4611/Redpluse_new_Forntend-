@@ -5,12 +5,25 @@ interface Patient {
   id: number;
 }
 
+interface Helper {
+  id: number;
+  name: string;
+  phone: string;
+  bloodType: string;
+}
+
 interface BloodRequest {
   id: number;
   requiredBloodType: string;
   quantity: number;
   status: string;
   patient?: Patient;
+}
+
+interface Donation {
+  id: number;
+  helper: Helper;
+  bloodRequest: BloodRequest;
 }
 
 interface User {
@@ -20,6 +33,7 @@ interface User {
 
 const ViewCreatedRequests: React.FC = () => {
   const [requests, setRequests] = useState<BloodRequest[]>([]);
+  const [donations, setDonations] = useState<Donation[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   const getLoggedInUser = (): User | null => {
@@ -51,22 +65,42 @@ const ViewCreatedRequests: React.FC = () => {
       setRequests(filtered);
     } catch (error) {
       console.error("Error fetching requests:", error);
-    } finally {
-      setLoading(false);
+    }
+  };
+  const handleComplete = async (id: number) => {
+  try {
+    await axios.put(
+      `http://localhost:8080/Redpluse/request/complete/${id}`
+    );
+
+    alert("Request marked as COMPLETED");
+
+    fetchRequests();
+  } catch (error) {
+    console.error(error);
+    alert("Error updating status");
+  }
+};
+
+  const fetchDonations = async () => {
+    try {
+      const res = await axios.get<Donation[]>(
+        "http://localhost:8080/Redpluse/donation/all"
+      );
+
+      setDonations(res.data);
+    } catch (error) {
+      console.error("Error fetching donations:", error);
     }
   };
 
-  // DELETE Helper
   const handleDelete = async (id: number) => {
-    if (!id) {
-      alert("Invalid ID");
-      return;
-    }
-
     try {
-      await axios.delete(`http://localhost:8080/Redpluse/request/deleterequest/${id}`);
+      await axios.delete(
+        `http://localhost:8080/Redpluse/request/deleterequest/${id}`
+      );
       alert("Request deleted successfully");
-      fetchRequests(); // Refresh the list after deletion
+      fetchRequests();
     } catch (error) {
       alert("Error deleting request");
       console.error(error);
@@ -74,17 +108,30 @@ const ViewCreatedRequests: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchRequests();
+    const loadData = async () => {
+      await fetchRequests();
+      await fetchDonations();
+      setLoading(false);
+    };
+
+    loadData();
   }, []);
+
+  const getHelper = (requestId: number) => {
+    const donation = donations.find(
+      (d) => d.bloodRequest.id === requestId
+    );
+    return donation?.helper;
+  };
 
   const getStatusClass = (status: string) => {
     switch (status) {
       case "PENDING":
         return "status pending blink";
-      case "APPROVED":
-        return "status approved";
-      case "REJECTED":
-        return "status rejected";
+      case "ASSIGNED":
+        return "status assigned";
+      case "COMPLETED":
+        return "status completed";
       default:
         return "status";
     }
@@ -107,159 +154,178 @@ const ViewCreatedRequests: React.FC = () => {
                 <th>Blood Type</th>
                 <th>Quantity</th>
                 <th>Status</th>
+                <th>Helper</th>
                 <th>Action</th>
               </tr>
             </thead>
+
             <tbody>
-              {requests.map((req) => (
-                <tr key={req.id}>
-                  <td>{req.id}</td>
-                  <td>{req.requiredBloodType}</td>
-                  <td>{req.quantity}</td>
-                  <td>
-                    <span className={getStatusClass(req.status)}>
-                      {req.status}
-                    </span>
-                  </td>
-                  <td>
-                   <button
-    
-    onClick={() => handleDelete(req.id)}
-  >
-    Delete
-  </button>
-                  </td>
-                </tr>
-              ))}
+              {requests.map((req) => {
+                const helper = getHelper(req.id);
+
+                return (
+                  <tr key={req.id}>
+                    <td>{req.id}</td>
+
+                    <td>{req.requiredBloodType}</td>
+
+                    <td>{req.quantity}</td>
+
+                    <td>
+                      <span className={getStatusClass(req.status)}>
+                        {req.status}
+                      </span>
+                    </td>
+
+                    <td>
+                      {helper ? (
+                        <div className="helperBox">
+                          <strong>{helper.name}</strong>
+                          <br />
+                          📞 {helper.phone}
+                          <br />
+                          🩸 {helper.bloodType}
+                        </div>
+                      ) : (
+                        <span className="waiting">
+                          Waiting for helper...
+                        </span>
+                      )}
+                    </td>
+
+                    <td>
+
+                    {req.status === "ASSIGNED" && (
+                     <button
+                    className="completeBtn"
+                    onClick={() => handleComplete(req.id)}
+>
+Mark Completed
+</button>
+)}
+
+<button
+className="deleteBtn"
+onClick={() => handleDelete(req.id)}
+>
+Delete
+</button>
+
+</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
       )}
 
-      {/* BUILT-IN CSS */}
       <style>{`
-        .container {
-          padding: 40px;
-          background: #f4f6f9;
-          min-height: 100vh;
-          font-family: Arial, sans-serif;
-        }
 
-        .title {
-          text-align: center;
-          margin-bottom: 30px;
-        }
+.container{
+padding:40px;
+background:#f4f6f9;
+min-height:100vh;
+font-family:Arial;
+}
+.completeBtn{
+background:#2e7d32;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+margin-right:8px;
+}
 
-        .message {
-          text-align: center;
-          font-size: 18px;
-        }
+.title{
+text-align:center;
+margin-bottom:30px;
+color:#c62828;
+}
 
-        .tableWrapper {
-          overflow-x: auto;
-        }
+.message{
+text-align:center;
+font-size:18px;
+}
 
-        .modern-table {
-          width: 100%;
-          border-collapse: collapse;
-          background: white;
-          border-radius: 10px;
-          overflow: hidden;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
+.tableWrapper{
+overflow-x:auto;
+}
 
-        .modern-table th {
-          background: #c62828;
-          color: white;
-          padding: 12px;
-          text-align: left;
-        }
+.modern-table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
-        .modern-table td {
-          padding: 12px;
-          border-bottom: 1px solid #eee;
-        }
+.modern-table th{
+background:#c62828;
+color:white;
+padding:14px;
+text-align:left;
+}
 
-        .modern-table tbody tr {
-          transition: all 0.3s ease;
-        }
+.modern-table td{
+padding:14px;
+border-bottom:1px solid #eee;
+}
 
-        .modern-table tbody tr:hover {
-          background-color: #f1f1f1;
-          transform: translateY(-3px);
-          box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-        }
+.status{
+padding:6px 14px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+}
 
-        .status {
-          padding: 6px 14px;
-          border-radius: 20px;
-          font-weight: bold;
-          font-size: 13px;
-        }
+.pending{
+background:#fbc02d;
+color:black;
+}
 
-        .pending {
-          background: #fbc02d;
-          color: black;
-        }
+.assigned{
+background:#2e7d32;
+color:white;
+}
 
-        .approved {
-          background: #2e7d32;
-          color: white;
-        }
+.completed{
+background:#1565c0;
+color:white;
+}
 
-        .rejected {
-          background: #c62828;
-          color: white;
-        }
+.blink{
+animation:blinkAnimation 1.2s infinite;
+}
 
-        /* 🔥 Blinking Animation */
-        .blink {
-          animation: blinkAnimation 1.2s infinite;
-        }
+@keyframes blinkAnimation{
+0%{opacity:1;}
+50%{opacity:.4;}
+100%{opacity:1;}
+}
 
-        @keyframes blinkAnimation {
-          0% { opacity: 1; }
-          50% { opacity: 0.4; }
-          100% { opacity: 1; }
-        }
+.helperBox{
+font-size:14px;
+line-height:1.4;
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-          .modern-table thead {
-            display: none;
-          }
+.waiting{
+color:gray;
+font-style:italic;
+}
 
-          .modern-table, 
-          .modern-table tbody, 
-          .modern-table tr, 
-          .modern-table td {
-            display: block;
-            width: 100%;
-          }
+.deleteBtn{
+background:#c62828;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+}
 
-          .modern-table tr {
-            margin-bottom: 15px;
-            background: white;
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-          }
-
-          .modern-table td {
-            text-align: right;
-            padding-left: 50%;
-            position: relative;
-          }
-
-          .modern-table td::before {
-            content: attr(data-label);
-            position: absolute;
-            left: 15px;
-            font-weight: bold;
-            text-align: left;
-          }
-        }
-      `}</style>
+`}</style>
     </div>
   );
 };

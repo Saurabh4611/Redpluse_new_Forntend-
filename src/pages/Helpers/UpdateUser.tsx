@@ -74,13 +74,16 @@ const UpdateUser: React.FC = () => {
           placeholder="Email"
         />
 
-        <input
+        <select
           style={styles.input}
           name="role"
           value={user.role}
           onChange={handleChange}
           placeholder="Role"
-        />
+        >
+          <option value="helper">helper</option>
+          <option value="patient">patient</option>
+        </select>
 
         <input
           style={styles.input}
