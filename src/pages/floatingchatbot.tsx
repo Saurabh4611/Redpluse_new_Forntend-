@@ -168,6 +168,7 @@ max-width:80%;
 .chat-input{
 display:flex;
 border-top:1px solid #ddd;
+color:#333;
 }
 
 .chat-input input{
@@ -175,6 +176,7 @@ flex:1;
 border:none;
 padding:10px;
 outline:none;
+color:#333;
 }
 
 .chat-input button{

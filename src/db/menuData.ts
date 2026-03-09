@@ -36,40 +36,23 @@ export const menuData: MenuItemDataType[] = [
   {
     title: 'Services',
     link: '/service',
-    submenu: [
-      { title: 'Services', link: '/service' },
-     
-    ],
+    
   },
   {
     title: 'Pages',
     link: '#',
     submenu: [
-      {
-        title: 'Projects',
-        link: '/project',
-      },
-      {
-        title: 'Team',
-        link: '/team',
-        submenu: [
-          { title: 'Our Team', link: '/team' },
-         
-        ],
-      },
+      
+     
       { title: 'Collaboration', link: '/pricing' },
       { title: 'Faq\'s', link: '/faq' },
-      { title: '404 Page', link: '/404' },
+     
     ],
   },
   {
     title: 'Blog',
-    link: '/news',
-    submenu: [
-      { title: 'Blog Grid', link: '/news' },
-      { title: 'Blog Standard', link: '/news-standard' },
-      { title: 'Blog Details', link: '/news-details' },
-    ],
+    link: '/news-details',
+    
   },
   {
     title: 'Contact',

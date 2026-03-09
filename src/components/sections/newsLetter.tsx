@@ -15,9 +15,9 @@ const NewsLetter = () => {
                         <img src="/img/cta.png" alt="cta-img" />
                     </div>
                     <div className="cta-items">
-                        <h3 className="wow slideUp" data-delay=".5">Get Free Consultancy?</h3>
+                        <h3 className="wow slideUp" data-delay=".5">Have some Idea?</h3>
                         <Link to="/contact" className="theme-btn bg-white wow slideUp" data-delay=".7">
-                            get A Quote
+                            Contact Us
                             <i className="fa-solid fa-arrow-right-long" />
                         </Link>
                     </div>

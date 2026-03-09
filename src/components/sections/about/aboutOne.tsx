@@ -40,9 +40,7 @@ const AboutOne = () => {
 
                 <div className="about-icon-items">
   <div className="icon-items wow slideUp" data-delay=".7">
-    <div className="icon">
-      <img src="/img/about/icon-2.svg" alt="secure-network-icon" />
-    </div>
+    
     <div className="content">
       <h4>Trusted & Verified Network</h4>
       <p>
@@ -54,9 +52,7 @@ const AboutOne = () => {
   </div>
 
   <div className="icon-items wow slideUp" data-delay=".9">
-    <div className="icon">
-      <img src="/img/about/icon-3.svg" alt="real-time-support-icon" />
-    </div>
+    
     <div className="content">
       <h4>Real-Time Emergency Support</h4>
       <p>

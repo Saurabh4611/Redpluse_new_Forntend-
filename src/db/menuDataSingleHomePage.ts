@@ -59,4 +59,5 @@ export const menuDataSingleHomePage: MenuItemDataType[] = [
         title: 'Blog',
         link: '#blog',
     },
+   
 ];

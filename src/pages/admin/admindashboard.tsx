@@ -18,6 +18,15 @@ const AdminDashboard: React.FC = () => {
           <Link to="/patientList" style={styles.secondaryBtn}>
             Patient List
           </Link>
+          
+
+           <Link to="/available-requests" style={styles.primaryBtn}>
+            Request On Site
+          </Link>
+
+          <Link to="/my-donations" style={styles.primaryBtn}>
+            My Donations
+          </Link>
         </div>
       </div>
     </div>

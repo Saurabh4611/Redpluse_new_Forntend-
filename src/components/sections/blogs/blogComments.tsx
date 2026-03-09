@@ -2,19 +2,19 @@ import { Link } from "react-router-dom";
 
 const commentsData = [
     {
-        id: 1,
-        author: 'Albert Flores',
-        date: 'March 20, 2025 at 2:37 pm',
-        image: '/img/news/comment.png',
-        text: 'Neque porro est qui dolorem ipsum quia quaed inventor veritatis et quasi architecto var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy',
-    },
-    {
-        id: 2,
-        author: 'Alex Flores',
-        date: 'March 20, 2025 at 2:37 pm',
-        image: '/img/news/comment-2.png',
-        text: 'Neque porro est qui dolorem ipsum quia quaed inventor veritatis et quasi architecto var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy',
-    },
+    id: 1,
+    author: 'Rahul Sharma',
+    date: 'May 18, 2025 at 2:37 pm',
+    image: '/img/news/comment.png',
+    text: 'बहुत अच्छा अभियान है। Blood donation सच में किसी की जान बचा सकता है। अगर हम सभी समय-समय पर blood donate करें तो कई लोगों की जिंदगी बचाई जा सकती है।'
+},
+{
+    id: 2,
+    author: 'Robert johnson',
+    date: 'May 19, 2025 at 3:10 pm',
+    image: '/img/news/comment-2.png',
+    text: 'यह बहुत ही जरूरी initiative है। Hospitals में अक्सर blood की कमी होती है। मैं सभी लोगों से request करती हूँ कि अगर आप healthy हैं तो जरूर blood donate करें।'
+}
 ];
 
 const BlogComments = () => {

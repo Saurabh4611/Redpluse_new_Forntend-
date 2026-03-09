@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PatientDashboard: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div style={styles.page}>
       <div style={styles.card}>
@@ -18,9 +21,18 @@ const PatientDashboard: React.FC = () => {
           <Link to="/requests" style={styles.secondaryBtn}>
             View Requests
           </Link>
+
+          
+        </div>
+        <br></br>
+         <button
+            style={styles.logoutBtn}
+            onClick={() => navigate("/login")}
+          >
+            Logout
+          </button>
         </div>
       </div>
-    </div>
   );
 };
 
@@ -37,6 +49,17 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+   logoutBtn: {
+    width: "100%",
+    padding: "10px",
+    marginTop: "auto",
+    background: "white",
+    border: "none",
+    color: "black",
+    borderRadius: "6px",
+    cursor: "pointer",
   },
 
   card: {

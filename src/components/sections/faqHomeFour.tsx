@@ -9,7 +9,7 @@ const FaqHomeFour = ({ className }: { className?: string }) => {
                     <div className="row g-4">
                         <div className="col-lg-6 wow slideUp" data-delay=".4">
                             <div className="faq-image">
-                                <img src="/img/faq/faq-2.png" alt="faq-img" />
+                                <img src="/img/news/news-post01.png" alt="faq-img" />
                             </div>
                         </div>
                         <div className="col-lg-6">

@@ -132,6 +132,13 @@ const PatientList: React.FC = () => {
             >
               Back
             </button>
+
+            <button
+            style={styles.logoutBtn}
+            onClick={() => navigate("/login")}
+          >
+            Logout
+          </button>
           </div>
         </div>
       </div>
@@ -161,6 +168,16 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "20px",
   },
 
+  logoutBtn: {
+    width: "100%",
+    padding: "10px",
+    marginTop: "auto",
+    background: "white",
+    border: "none",
+    color: "black",
+    borderRadius: "6px",
+    cursor: "pointer",
+  },
   card: {
     width: "100%",
     maxWidth: "1100px",

@@ -8,15 +8,14 @@ import BlogStandard from "@/pages/blog-standard";
 import Contact from "@/pages/contact";
 import Faq from "@/pages/faq";
 import Home from "@/pages/home";
-import Login from "@/pages/login";
+
 import Signup from "@/pages/resigter";
 
-import Pricing from "@/pages/pricing";
+import Login from "@/pages/Login";
 import Project from "@/pages/project";
 
 import Service from "@/pages/service";
-import ServiceCarousel from "@/pages/service-carousel";
-import ServiceDetails from "@/pages/service-details";
+
 import Team from "@/pages/team";
 
 import { createBrowserRouter, Route } from "react-router-dom";
@@ -31,6 +30,7 @@ import ViewCreatedRequests from "@/pages/Patients/viewrequests";
 import HelperDashboard from "@/pages/Helpers/helperdashboard";
 import AvailableRequests from "@/pages/Helpers/avaliblerequest";
 import MyDonations from "@/pages/Helpers/mydonation";
+import Collaboration from "@/pages/pricing";
 
 
 export const router = createBrowserRouter([
@@ -51,14 +51,7 @@ export const router = createBrowserRouter([
                 path:'/service',
                 element:<Service/>
             },
-            {
-                path:'/service-carousel',
-                element:<ServiceCarousel/>
-            },
-            {
-                path:'/service-details',
-                element:<ServiceDetails/>
-            },
+           
             {
                 path:'/project',
                 element:<Project/>
@@ -72,7 +65,7 @@ export const router = createBrowserRouter([
             
             {
                 path:'/pricing',
-                element:<Pricing/>
+                element:<Collaboration/>
             },
             {
                 path:'/faq',

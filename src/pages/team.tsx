@@ -6,6 +6,7 @@ const Team = () => {
     <>
         <PageTitle title="Our Team" currentPage="Our Team"/>
         
+        
     </>
   )
 }

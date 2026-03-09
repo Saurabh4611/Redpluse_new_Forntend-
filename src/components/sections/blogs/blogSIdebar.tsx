@@ -1,39 +1,23 @@
 import { Link } from "react-router-dom";
 
 const categories = [
-    { name: 'Database Security', count: 8 },
-    { name: 'IT Consultancy', count: 11 },
-    { name: 'App Development', count: 12, active: true },
-    { name: 'UI/UX Design', count: 18 },
-    { name: 'Cyber Security', count: 7 },
+    { name: 'Donation', count: 8 },
+    { name: 'Volunteering', count: 11 },
+    { name: 'Camps', count: 12, active: true },
+    { name: 'Events', count: 18 },
+    { name: 'Available', count: 7 },
 ];
 
-const recentPosts = [
-    {
-        imgSrc: '/img/news/pp3.jpg',
-        date: '18 Dec, 2025',
-        title: 'Colgate-Palmolive Renews with Morz in Malaysia Soon',
-    },
-    {
-        imgSrc: '/img/news/pp4.jpg',
-        date: '18 Dec, 2025',
-        title: 'Bill Gates Launches Clean Energy Investment Fund',
-    },
-    {
-        imgSrc: '/img/news/pp5.jpg',
-        date: '18 Dec, 2025',
-        title: 'Metal Roofing: The Best for Solar Panels',
-    },
-];
+
 
 const tags = [
     'Uncategorized',
-    'Construction',
-    'Projects',
-    'Expansion',
-    'Design',
-    'Corporat',
-    'Branding',
+    'Camps',
+    'Awareness',
+    'Helping',
+    'Redpluse',
+    'Blood Donation',
+    'Collabrations',
 ];
 
 const BlogSidebar = () => {
@@ -69,31 +53,7 @@ const BlogSidebar = () => {
                 </div>
             </div>
 
-            <div className="single-sidebar-widget">
-                <div className="wid-title">
-                    <h3>Recent Post</h3>
-                </div>
-                <div className="recent-post-area">
-                    {recentPosts.map((post, index) => (
-                        <div className="recent-items" key={index}>
-                            <div className="recent-thumb">
-                                <img src={post.imgSrc} alt="img" />
-                            </div>
-                            <div className="recent-content">
-                                <ul>
-                                    <li>
-                                        <i className="fa-solid fa-calendar-days" />
-                                        {post.date}
-                                    </li>
-                                </ul>
-                                <h6>
-                                    <Link to="/news-details">{post.title}</Link>
-                                </h6>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+           
 
             <div className="single-sidebar-widget">
                 <div className="wid-title">

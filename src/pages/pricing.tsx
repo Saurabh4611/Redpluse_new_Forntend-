@@ -1,7 +1,7 @@
 import PriceGridTwo from "@/components/sections/pricing/priceGridTwo"
 import PageTitle from "@/components/sections/pageTitle"
 
-const Pricing = () => {
+const Collaboration = () => {
     return (
         <>
             <PageTitle currentPage="Collaboration" title="Collaboration" />
@@ -10,4 +10,4 @@ const Pricing = () => {
     )
 }
 
-export default Pricing
+export default Collaboration
