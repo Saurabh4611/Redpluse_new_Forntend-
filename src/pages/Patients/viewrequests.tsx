@@ -70,7 +70,7 @@ const ViewCreatedRequests: React.FC = () => {
   const handleComplete = async (id: number) => {
   try {
     await axios.put(
-      `http://localhost:8080/Redpluse/request/complete/${id}`
+      `https://redpluse-backend.onrender.com/Redpluse/request/complete/${id}`
     );
 
     alert("Request marked as COMPLETED");
@@ -85,7 +85,7 @@ const ViewCreatedRequests: React.FC = () => {
   const fetchDonations = async () => {
     try {
       const res = await axios.get<Donation[]>(
-        "http://localhost:8080/Redpluse/donation/all"
+        "https://redpluse-backend.onrender.com/Redpluse/donation/all"
       );
 
       setDonations(res.data);
@@ -97,7 +97,7 @@ const ViewCreatedRequests: React.FC = () => {
   const handleDelete = async (id: number) => {
     try {
       await axios.delete(
-        `http://localhost:8080/Redpluse/request/deleterequest/${id}`
+        `https://redpluse-backend.onrender.com/Redpluse/request/deleterequest/${id}`
       );
       alert("Request deleted successfully");
       fetchRequests();
