@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE_URL = "http://localhost:8080/Redpluse/users";
+const API_BASE_URL = "https://redpluse-backend.onrender.com/Redpluse/users";
 
 /* =======================
    Patient Type

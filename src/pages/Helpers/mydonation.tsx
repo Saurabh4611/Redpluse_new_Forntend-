@@ -31,7 +31,7 @@ const MyDonations: React.FC = () => {
   const fetchDonations = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/Redpluse/donation/helper/${helperId}`
+        `https://redpluse-backend.onrender.com/Redpluse/donation/helper/${helperId}`
       );
 
       setDonations(res.data);
@@ -49,7 +49,7 @@ const MyDonations: React.FC = () => {
 
     try {
       await axios.delete(
-        `http://localhost:8080/Redpluse/donation/${id}`
+        `https://redpluse-backend.onrender.com/Redpluse/donation/${id}`
       );
 
       // remove from UI

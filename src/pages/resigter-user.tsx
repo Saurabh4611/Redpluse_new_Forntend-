@@ -29,7 +29,7 @@ const Signupuser = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/Redpluse/users/register",
+        "https://redpluse-backend.onrender.com/Redpluse/users/register",
         formDATA
       );
 

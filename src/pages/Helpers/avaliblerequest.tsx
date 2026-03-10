@@ -35,7 +35,7 @@ const AvailableRequests: React.FC = () => {
   const fetchRequests = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8080/Redpluse/request/allrequests"
+        "https://redpluse-backend.onrender.com/Redpluse/request/allrequests"
       );
 
       const pendingRequests = res.data.filter(

@@ -14,7 +14,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/Redpluse/users/login",
+        "https://redpluse-backend.onrender.com/Redpluse/users/login",
         { email, password }
       );
 

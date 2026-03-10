@@ -53,7 +53,7 @@ const ViewCreatedRequests: React.FC = () => {
   const fetchRequests = async () => {
     try {
       const res = await axios.get<BloodRequest[]>(
-        "http://localhost:8080/Redpluse/request/allrequests"
+        "https://redpluse-backend.onrender.com/Redpluse/request/allrequests"
       );
 
       if (!patientId) return;
