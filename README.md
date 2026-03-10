@@ -13,8 +13,8 @@ It allows patients to create blood requests, track their status, and enables adm
 
 ## 🌍 Live Demo (Optional)
 
-Frontend: _Add deployed link here_  
-Backend API: _Add deployed link here_
+Frontend: https://redpluse.netlify.app/  
+Backend API:https://redpluse-backend.onrender.com
 
 ---
 
