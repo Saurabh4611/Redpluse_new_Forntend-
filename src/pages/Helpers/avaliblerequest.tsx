@@ -58,7 +58,7 @@ const AvailableRequests: React.FC = () => {
 
     try {
       await axios.post(
-        `http://localhost:8080/Redpluse/donation/assign?requestid=${requestId}&helperid=${helperId}`
+        `https://redpluse-backend.onrender.com/Redpluse/donation/assign?requestid=${requestId}&helperid=${helperId}`
       );
 
       alert("You accepted this request!");
