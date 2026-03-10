@@ -1,4 +1,4 @@
-import BlogCard from "@/components/sections/blogs/blogCard"
+
 import PageTitle from "@/components/sections/pageTitle"
 import Pagination from "@/components/ui/pagination"
 

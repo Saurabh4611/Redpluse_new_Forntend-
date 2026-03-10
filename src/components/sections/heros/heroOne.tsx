@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 
 import 'swiper/css';
-import 'swiper/css/navigation';
+
 import 'swiper/css/effect-fade';
 import { Link } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { serviceThreeData } from "@/db/serviceThreeData"
+import { serviceOneData } from "@/db/serviceOneData"
 import ServiceCardTwo from "./serviceCardTwo"
 import { Autoplay, Pagination } from "swiper/modules"
 
@@ -42,7 +42,7 @@ const ServicesFive = () => {
                     modules={[Pagination, Autoplay]}
                 >
                     {
-                        serviceThreeData.map((service) => (
+                        serviceOneData.map((service) => (
                             <SwiperSlide key={service.id}>
                                 <ServiceCardTwo service={service} />
                             </SwiperSlide>

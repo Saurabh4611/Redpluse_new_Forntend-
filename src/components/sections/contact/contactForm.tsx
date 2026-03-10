@@ -1,3 +1,5 @@
+import Contact from "@/pages/contact"
+
 const ContactForm = () => {
     return (
         <div className="contact-content">
@@ -5,7 +7,7 @@ const ContactForm = () => {
             <p>
                Redpluse is for the people,by the people. So we love to hear from you. Whether you have a question, feedback, or just want to say hi, our team is here to listen and assist you. Reach out to us anytime, and we'll get back to you as soon as possible. Your voice matters to us!
             </p>
-            <form action="contact.php" id="contact-form" method="POST" className="contact-form-items">
+            <form  id="contact-form" className="contact-form-items">
                 <div className="row g-4">
                     <div className="col-lg-6 wow slideUp" data-delay=".3">
                         <div className="form-clt">
@@ -26,7 +28,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     <div className="col-lg-7 wow slideUp" data-delay=".9">
-                        <button type="submit" className="theme-btn">
+                        <button onClick={Contact} className="theme-btn">
                             Send Message <i className="fa-solid fa-arrow-right-long" />
                         </button>
                     </div>

@@ -1,4 +1,4 @@
-import { serviceThreeData } from "@/db/serviceThreeData"
+import { serviceOneData } from "@/db/serviceOneData"
 import NewsLetterTwo from "../newsLetterTwo"
 import ServiceCardTwo from "./serviceCardTwo"
 import SectionTitle from "@/components/ui/sectionTitle"
@@ -19,7 +19,7 @@ const ServicesThree = () => {
                     </Link>
                 </div>
                 <div className="row">
-                    {serviceThreeData.slice(0, 4).map((service) => (
+                    {serviceOneData.slice(0, 4).map((service) => (
                         <div key={service.id} className="col-xl-3 col-lg-4 col-md-6">
                             <ServiceCardTwo service={service} />
                         </div>

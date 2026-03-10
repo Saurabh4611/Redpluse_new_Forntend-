@@ -4,7 +4,7 @@ import Error from "@/pages/404";
 import About from "@/pages/about";
 import Blog from "@/pages/blog";
 import BlogDetails from "@/pages/blog-details";
-import BlogStandard from "@/pages/blog-standard";
+
 import Contact from "@/pages/contact";
 import Faq from "@/pages/faq";
 import Home from "@/pages/home";
@@ -79,10 +79,7 @@ export const router = createBrowserRouter([
                 path:'/news',
                 element:<Blog/>
             },
-            {
-                path:'/news-standard',
-                element:<BlogStandard/>
-            },
+           
             {
                 path:'/news-details',
                 element:<BlogDetails/>

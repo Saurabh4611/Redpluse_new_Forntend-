@@ -39,7 +39,7 @@ const TeamesOne = () => {
                             Dedicated  Redpluse Team Members
                         </SectionTitle.Title>
                     </SectionTitle>
-                    <Link to="/team" className="theme-btn hover-white wow slideUp" data-delay=".5">
+                    <Link to="/" className="theme-btn hover-white wow slideUp" data-delay=".5">
                         All Member
                         <i className="fa-solid fa-arrow-right-long" />
                     </Link>

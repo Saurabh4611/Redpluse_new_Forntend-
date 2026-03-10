@@ -30,9 +30,9 @@ const quickLinks = [
 ];
 
 const services = [
-    { text: "Collaboration", link: "/service-details" },
-    { text: "Donation", link: "/service-details" },
-    { text: "Membership", link: "/service-details" },
+    { text: "Collaboration", link: "/pricing" },
+    { text: "Donation", link: "/pricing" },
+    { text: "Membership", link: "/pricing" },
   
 ];
 

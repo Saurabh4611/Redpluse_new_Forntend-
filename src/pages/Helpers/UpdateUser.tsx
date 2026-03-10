@@ -38,7 +38,7 @@ const UpdateUser: React.FC = () => {
     }
   }, [id]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement| HTMLSelectElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
@@ -79,8 +79,9 @@ const UpdateUser: React.FC = () => {
           name="role"
           value={user.role}
           onChange={handleChange}
-          placeholder="Role"
+         
         >
+          <option value="">Select Role</option>
           <option value="helper">helper</option>
           <option value="patient">patient</option>
         </select>

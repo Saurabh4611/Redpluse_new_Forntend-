@@ -15,11 +15,11 @@ const ProjectCard = ({ project, className, iconCalss, isIconShow=true }: Project
                 <div className="project-content">
                     <p>{project.category}</p>
                     <h4>
-                        <Link to={project.link}>{project.title}</Link>
+                        <Link to ={project.link || "#"}>{project.title}</Link>
                     </h4>
                     {
                         isIconShow &&
-                        <Link to={project.link} className={`${iconCalss}`}>
+                        <Link to ={project.link || "#"} className={`${iconCalss}`}>
                             <i className="fa-solid fa-arrow-right" />
                         </Link>
                     }

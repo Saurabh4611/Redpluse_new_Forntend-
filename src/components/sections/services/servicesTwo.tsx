@@ -1,4 +1,4 @@
-import { servicesTwoData } from "@/db/servicesTwoData"
+import { serviceOneData } from "@/db/serviceOneData"
 import ServiceCard from "./serviceCard"
 import SectionTitle from "@/components/ui/sectionTitle"
 
@@ -11,7 +11,7 @@ const ServicesTwo = () => {
                     <SectionTitle.Title> Provide Comprehensive Ecological<br /> Service</SectionTitle.Title>
                 </SectionTitle>
                 <div className="row">
-                    {servicesTwoData.map((service) => (
+                    {serviceOneData.map((service) => (
                         <div
                             key={service.id}
                             className={`col-xl-3 col-lg-6 col-md-6 wow slideUp`}
